@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import react from 'react';
 import './App.css';
-
+import Header from './Header.js';
+import Home from './Home.js'
+import Product from './Product.js'
+import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
+import Checkout from './Checkout.js'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header/> {/*header disini dirender 
+        untuk semua route karena datang sebelum
+        switch */}
+
+         <Switch> {/*seperti switch pada bahasa code biasa */}
+          <Route path="/Checkout">              
+            
+            <Checkout/>
+
+          </Route>  
+
+          <Route path="/">              
+            
+            <Home/>
+
+          </Route>    
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
