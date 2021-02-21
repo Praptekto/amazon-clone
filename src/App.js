@@ -5,6 +5,9 @@ import Home from './Home.js'
 import Product from './Product.js'
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
 import Checkout from './Checkout.js'
+
+
+
 function App() {
   return (
     <Router>
