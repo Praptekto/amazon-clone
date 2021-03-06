@@ -5,7 +5,7 @@ import { useStateValue } from './StateProvider'
 
 
 function Product({id,title, image, price ,rating}) {
-    const [{basket},dispatch]=useStateValue();
+    const [{basket},dispatch]=useStateValue();//??KONEK KE USE_REDUCER DI STATE PROVIDER
 
 
     // console.log(`Ini adalah basetnya`,basket);

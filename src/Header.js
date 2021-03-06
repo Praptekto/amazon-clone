@@ -6,14 +6,21 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import {Link} from 'react-router-dom'
 import { LinkedCameraRounded } from '@material-ui/icons';
 import {useStateValue} from './StateProvider';
+import { auth } from './firebase';
 
 
 
 function Header() {
-    const [{basket},dispatch]=useStateValue();
+    const [{basket,user},dispatch]=useStateValue();
+    const handleAuthentication=()=>{
+        if (user){
+            auth.signOut();
+        }
+    }
+
     return (
         <div className='header'>
-            <Link to='/'>
+            <Link to={'/'}> 
                 <img className="header__logo"
                 src={Amazon} />
             </Link>
@@ -25,14 +32,16 @@ function Header() {
             </div>
 
             <div className="header__nav">
-                <div className="header__option">
+                <Link to={user?'/':'/Login'}>
+                <div onClick={handleAuthentication} className="header__option">
                     <span className="headerLineOne">
-                            Hello Guest
+                           {!user? ' Hello Guest':`Hello ${user.email}`}
                     </span>
                     <span className="headerLineTwo">
-                            Sign in
+                            {user?'Sign out':'Sign in'}
                     </span>
                 </div>
+                </Link>
                 <div className="header__option">
                     <span className="headerLineOne">
                             Return
