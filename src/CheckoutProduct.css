@@ -25,9 +25,17 @@
 
 .checkoutProduct__rating{
     display: flex;
+    /* nambah */
+    margin: 0px;
 }
 
 .checkoutProduct__title{
     font-size: 17px;
     font-weight: 800;
+    /* nambah */
+    margin: 0px;
+}
+/* nambah */
+.checkoutProduct__price{
+    margin: 0px;
 }

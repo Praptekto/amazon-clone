@@ -9,6 +9,11 @@ import Login from './Login';
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
 import Payment from './Payment';
+import {loadStripe} from "@stripe/stripe-js";
+import {Elements} from "@stripe/react-stripe-js";
+import Orders from './Orders';
+
+const promise=loadStripe('pk_test_51IS2raEx5QghFYrcMfTO828BbuBbFzIAspJSoOiDNr2whviY8zXGEYzzUrX0Fq9YP9UebNWlDC5yLcn49u3WrYiA00m3o6hSeG')
 
 
 function App() {
@@ -47,30 +52,39 @@ function App() {
         switch */}
 
          <Switch> {/*seperti switch pada bahasa code biasa */}
-         <Route path="/Login">              
-            
-            <Login/>
+            <Route path="/orders">   
+            <Header/>            
+              
+              <Orders/>
 
-          </Route>
-          <Route path="/payment">              
-            
-            <Header/> 
-            <h1>Ini Payment</h1>
-            <Payment/>
+            </Route>
+            <Route path="/Login">              
+              
+              <Login/>
 
-          </Route>    
-          <Route path="/Checkout">  
-            <Header/>             
-            
-            <Checkout/>
+            </Route>
+            <Route path="/payment">              
+              
+              <Header/> 
+              <h1>Ini Payment</h1>
+              <Elements stripe={promise}>
+                <Payment/>
+              </Elements>
+              
 
-          </Route>  
+            </Route>    
+            <Route path="/Checkout">  
+              <Header/>             
+              
+              <Checkout/>
 
-          <Route path="/">              
-            <Header/> 
-            <Home/>
+            </Route>  
 
-          </Route>    
+            <Route path="/">              
+              <Header/> 
+              <Home/>
+
+            </Route>    
         </Switch>
       </div>
     </Router>
