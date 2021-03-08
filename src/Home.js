@@ -13,7 +13,7 @@ function Home() {
                 />
             
             
-                <div className="home__row">
+                <div className="home__row" id="header">
                     <Product 
                     id="1"
                     title="The lean start-Up" 
