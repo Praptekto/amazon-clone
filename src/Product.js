@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Product.css'
 import { useStateValue } from './StateProvider'
 
 
 
 function Product({id,title, image, price ,rating}) {
-    const [{basket},dispatch]=useStateValue();
+    const [{basket},dispatch]=useStateValue();//??KONEK KE USE_REDUCER DI STATE PROVIDER
 
 
     // console.log(`Ini adalah basetnya`,basket);
@@ -29,7 +30,15 @@ function Product({id,title, image, price ,rating}) {
 
 
     return (
-        <div className="product">
+       
+        <Link to={{
+            pathname: "/productdetails",
+            search: "",
+            hash: "",
+            state: { product: {id:id,title:title, image:image, price:price ,rating:rating} }
+          }}
+            className="product">
+             
             <div className="product__info">
                 <p>{title}</p>
                 <p className="product__price">
@@ -50,8 +59,9 @@ function Product({id,title, image, price ,rating}) {
             <img src={image}/>
 
             <button onClick={addToBasket}>Add to basket</button>
-            
-        </div>
+               
+        </Link>
+        
     )
 }
 
