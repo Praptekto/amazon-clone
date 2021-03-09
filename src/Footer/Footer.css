@@ -1,11 +1,87 @@
-.Footer__backToTop{
+/* 
+0.wrapping
+1. Bagian back to top
+2. Bagian details
+3. Bagian amazon features 
+4. Bagian terms and condition */
+
+/* 0. wrapping */
+
+/* 1. Bagian back to top */
+.footer__backToTop{
     background-color: #38445c;
     color: white;
     text-align: center;
+    margin: 0;
 }
-.Footer__amazonDetails{
+.linkdetails{
+    text-decoration: none;
+    color: white;
+}
+.linkdetails:hover{
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+}
+.footer__backToTop:hover{
+    background-color: #52617e;
+    
+}
+.footer__backToTop__a{
+    text-decoration: none;
+    color: white;
+    font-weight: lighter bolder ;
+}
+
+/* 2. Bagian details */
+
+.detailsContainer{
     background-color: #282c3c;
+    /* display: flex;
+    flex-direction: column; */
+   
 }
-.Footer__amazonFeatures{
+.footer__amazonDetails{
+    background-color: #282c3c;
+    color: white;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    
+    
+}
+.footer__amazonDetailselement{
+    flex: 1;
+    text-align: center;
+}
+
+.footer__amazonDetailsTitle{
+    font-weight: bolder;
+}
+
+.horLine{
+    background-color: #52617e;
+    height: 2px;
+}
+
+/* 3. Bagian amazon features */
+
+.features__container{
      background-color: #181c24;
+     display: flex;
+     color: white;
 }
+
+/* 4. Bagian terms and condition */
+
+.sticky {
+    position: -webkit-sticky;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+    background-color: #d1ce77;
+    border: 2px solid #9b8634;
+    z-index: 1;
+  }

@@ -18,6 +18,7 @@
 }
 
 .home__image{
+    object-fit: contain;
     width: 100%;
     z-index:-1;
     margin-bottom: -350px;

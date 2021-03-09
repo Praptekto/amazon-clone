@@ -2,15 +2,17 @@ import React from 'react'
 import './Home.css'
 import Product from './Product.js'
 import amazonhp from './amazonhp.jpg'
+import MySlider from './Slider'
 
 function Home() {
     return (
         <div className="home">
             <div className="home__container">
-                <img className="home__image" 
+                {/* <img className="home__image" 
                         src={amazonhp}
                         alt="Home Container of Amazon"
-                />
+                /> */}
+                <MySlider/>
             
             
                 <div className="home__row" id="header">

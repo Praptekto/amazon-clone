@@ -1,9 +1,11 @@
 .product{
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     margin: 10px;
+    color: black;
     padding: 20px;
     width: 100%;
     max-width: 400px;
